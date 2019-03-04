@@ -40,6 +40,9 @@ public:
 	void SetVadMode(bool vad);
 	void AddAudioEffect(effects::AudioEffect* effect);
 	void RemoveAudioEffect(effects::AudioEffect* effect);
+	int GetComplexity(){
+		return complexity;
+	}
 
 private:
 	static size_t Callback(unsigned char* data, size_t len, void* param);
@@ -69,6 +72,11 @@ private:
 	bool vadMode=false;
 	uint32_t vadNoVoiceBitrate;
 	std::vector<effects::AudioEffect*> postProcEffects;
+	int secondaryEnabledBandwidth;
+	int vadModeVoiceBandwidth;
+	int vadModeNoVoiceBandwidth;
+
+	bool wasSecondaryEncoderEnabled=false;
 
 	void (*callback)(unsigned char*, size_t, unsigned char*, size_t, void*);
 	void* callbackParam;
