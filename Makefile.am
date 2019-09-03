@@ -24,6 +24,7 @@ audio/AudioOutput.cpp \
 audio/Resampler.cpp \
 os/posix/NetworkSocketPosix.cpp \
 video/VideoSource.cpp \
+video/VideoPacketSender.cpp \
 video/VideoRenderer.cpp \
 json11.cpp
 
